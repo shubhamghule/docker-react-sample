@@ -13,6 +13,8 @@ RUN npm run build
 
 # Run Phase
 FROM nginx
+# for AWS Beanstalk
+EXPOSE 80
 # For named 
 # COPY --from=builder /app/build /usr/share/nginx/html
 
