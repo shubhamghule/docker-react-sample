@@ -7,6 +7,6 @@ services:
 before_install:
   - docker build -t devshubham1/docker-react-sample -f Dockerfile.dev .
 
-scripts:
+script:
   - docker run -e CI=true devshubham1/docker-react-sample npm run test
 
