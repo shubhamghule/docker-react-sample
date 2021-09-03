@@ -1,25 +1,25 @@
-language: generic 
-sudo: required
-services:
-  - docker
+# language: generic 
+# sudo: required
+# services:
+#   - docker
 
 
-before_install:
-  - docker build -t devshubham1/docker-react-sample -f Dockerfile.dev .
+# before_install:
+#   - docker build -t devshubham1/docker-react-sample -f Dockerfile.dev .
 
-script:
-  - docker run -e CI=true devshubham1/docker-react-sample npm run test
+# script:
+#   - docker run -e CI=true devshubham1/docker-react-sample npm run test
 
-deploy:
-  provider: elasticbeanstalk
-  region:  "us-east-1"
-  app: "dockerReactSample"
-  env: "Dockerreactsample-env"
-  bucket_name: "elasticbeanstalk-us-east-1-394468765651"
-  bucket_path: "dockerReactSample"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+# deploy:
+#   provider: elasticbeanstalk
+#   region:  "us-east-1"
+#   app: "dockerReactSample"
+#   env: "Dockerreactsample-env"
+#   bucket_name: "elasticbeanstalk-us-east-1-394468765651"
+#   bucket_path: "dockerReactSample"
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
 
 
